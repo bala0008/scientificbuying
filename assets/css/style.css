@@ -27708,7 +27708,8 @@ header.header-gradient .top-nav .navbar-top .rightside-box .right-side-menu .rig
     position: fixed;
     left: 0;
     /* top: 0; */
-    top: 95px;
+    /* top: 95px; */
+    top: 110px; 
     height: 100vh;
     overflow: auto;
     padding-top: 0;
@@ -27777,7 +27778,8 @@ header.header-gradient .top-nav .navbar-top .rightside-box .right-side-menu .rig
 .custom-row .content-col {
     margin-left: 320px;
     padding-left: calc(12px + 13*(100vw - 320px)/1600);
-    margin-top: calc(77px + 36*(100vw - 320px)/1600);
+    /* margin-top: calc(77px + 36*(100vw - 320px)/1600); */
+    margin-top: calc(90px + 36*(100vw - 320px)/1600);
     padding-right: calc(12px + 13*(100vw - 320px)/1600)
 }
 
