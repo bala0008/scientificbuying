@@ -17021,7 +17021,7 @@ body.rtl .product-section-box .review-box .review-people .review-list li .people
 }
 
 .slick-slider .slick-list .slick-slide>* {
-    margin: 0 10px
+    /* margin: 0 10px */
 }
 
 [dir=rtl] .slick-slider .slick-list .slick-slide>* {
@@ -27709,7 +27709,7 @@ header.header-gradient .top-nav .navbar-top .rightside-box .right-side-menu .rig
     left: 0;
     /* top: 0; */
     /* top: 95px; */
-    top: 110px; 
+    top: 120px; 
     height: 100vh;
     overflow: auto;
     padding-top: 0;

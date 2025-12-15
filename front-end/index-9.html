@@ -502,27 +502,82 @@
 
                 <div class="content-col">
                     <div class="section-b-space">
-                        <div class="row g-md-4 g-3">
-                            <div class="col-xxl-8 col-xl-12 col-md-7">
-                                <div class="banner-contain hover-effect">
-                                    <img src="../assets/images/grocery/banner/11.jpg" class="bg-img blur-up lazyload"
-                                        alt="">
-                                    <div class="banner-details p-center-left p-sm-5 p-4">
-                                        <div>
-                                            <h2 class="text-kaushan fw-normal orange-color">Get Ready To</h2>
-                                            <h3 class="mt-2 mb-3 text-white">TAKE ON THE DAY!</h3>
-                                            <p class="text-content banner-text text-white opacity-75 d-md-block d-none">
-                                                In publishing and graphic design, Lorem ipsum is a placeholder text
-                                                commonly used to demonstrate.</p>
-                                            <button onclick="location.href = 'shop-left-sidebar.html';"
-                                                class="btn btn-animation btn-sm mend-auto">Shop Now <i
-                                                    class="fa-solid fa-arrow-right icon"></i></button>
+                        <div class="row g-md-4 ">
+                            <style>
+                                .slider-3-product .product-slider-image {
+                                    width: 100%;
+                                    height: auto;
+                                    /* reduce height here */
+                                    border-radius: 12px;
+                                    overflow: hidden;
+                                }
+
+                                .slider-3-product .product-slider-image img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: contain;
+                                    /* ⬅️ NO CUT */
+                                    display: block;
+                                    background: #fff;
+                                    /* optional: avoids empty black space */
+                                }
+
+
+                                /* Make image full width inside slick */
+                                .slider-3-product .product-slider-image img {
+                                    width: 100%;
+                                    height: auto;
+                                    display: block;
+                                }
+
+
+                                .product-slider-image {
+                                    width: 100%;
+                                    border-radius: 12px;
+                                    /* Match the image radius */
+                                    overflow: hidden;
+                                }
+
+                                /* .col-xxl-12,
+                                .col-xl-12,
+                                .col-md-12 {
+                                    padding-left: 0 !important;
+                                    padding-right: 0 !important;
+                                } */
+                            </style>
+                            <div class="col-xxl-12 col-xl-12 col-md-12 p-0">
+
+                                <div class="slider-3-product product-wrapper">
+
+                                    <div>
+                                        <div class="product-slider-image">
+                                            <img src="https://static3.industrybuying.com/homepage/1764757954Desktop-Banner-1200x350-Office-Supplies.png" class="img-fluid">
                                         </div>
                                     </div>
+
+                                    <div>
+                                        <div class="product-slider-image">
+                                            <img src="https://static3.industrybuying.com/homepage/1764906420image%20-%202025-12-04T174204.776.png" class="img-fluid">
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="product-slider-image">
+                                            <img src="https://static3.industrybuying.com/homepage/1764757954Desktop-Banner-1200x350-Office-Supplies.png" class="img-fluid">
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="product-slider-image">
+                                            <img src="https://static3.industrybuying.com/homepage/1764906420image%20-%202025-12-04T174204.776.png" class="img-fluid">
+                                        </div>
+                                    </div>
+
                                 </div>
+
                             </div>
 
-                            <div class="col-xxl-4 col-xl-12 col-md-5">
+                            <!-- <div class="col-xxl-4 col-xl-12 col-md-5">
                                 <div class="banner-contain hover-effect h-100">
                                     <img src="../assets/images/grocery/banner/12.jpg" class="bg-img blur-up lazyload"
                                         alt="">
@@ -538,17 +593,105 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <style>
+                        /* ===== SLICK RESET FIX ===== */
+                        .food-grid {
+                            margin: 0 -10px;
+                            /* equal spacing */
+                        }
+
+                        .food-grid .slick-slide {
+                            padding: 0 10px;
+                            height: auto;
+                        }
+
+                        .food-grid .slick-track {
+                            display: flex !important;
+                        }
+
+                        .food-grid .slick-slide>div {
+                            height: 100%;
+                        }
+
+                        /* ===== PRODUCT CARD FIX ===== */
+                        .product-box {
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                        .product-image {
+                            text-align: center;
+                        }
+
+                        .product-image img {
+                            max-height: 160px;
+                            object-fit: contain;
+                        }
+
+                        /* ===== TITLE + ARROWS ===== */
+                        .food-title {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin-bottom: 15px;
+                        }
+
+                        .future-arrows {
+                            display: flex;
+                            gap: 8px;
+                        }
+
+                        .future-btn {
+                            width: 38px;
+                            height: 38px;
+                            border-radius: 10px;
+                            border: 1px solid #e5e5e5;
+                            background: #fff;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            cursor: pointer;
+                            transition: all 0.25s ease;
+                        }
+
+                        .future-btn:hover {
+                            background: var(--theme-color);
+                            color: #fff;
+                            border-color: var(--theme-color);
+                        }
+
+                        /* ===== MOBILE FIX ===== */
+                        @media (max-width: 575px) {
+                            .food-title {
+                                flex-direction: column;
+                                align-items: flex-start;
+                                gap: 10px;
+                            }
+                        }
+                    </style>
+
+
+                    <div class="title food-title d-flex justify-content-between align-items-center">
+                        <div>
+                            <h2 class="text-theme font-sm mb-1">Food Cupboard</h2>
+                            <p class="mb-0">A virtual assistant collects the products from your list</p>
+                        </div>
+
+                        <div class="future-arrows">
+                            <button class="future-btn food-prev" title="Previous">
+                                <i class="fa-solid fa-angle-left"></i>
+                            </button>
+                            <button class="future-btn food-next" title="Next">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </button>
                         </div>
                     </div>
 
-                    <div class="title d-block">
-                        <h2 class="text-theme font-sm">Food Cupboard</h2>
-                        <p>A virtual assistant collects the products from your list</p>
-                    </div>
-
-                    <div
-                        class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
+                    <div class="food-grid section-b-space">
                         <div>
                             <div class="product-box product-white-bg wow fadeIn">
                                 <div class="product-image">
@@ -608,7 +751,478 @@
                                 </div>
                             </div>
                         </div>
+                        <div>
+                            <div class="product-box product-white-bg wow fadeIn">
+                                <div class="product-image">
+                                    <a href="product-left-thumbnail.html">
+                                        <img src="../assets/images/cake/product/1.png"
+                                            class="img-fluid blur-up lazyload" alt="">
+                                    </a>
+                                    <ul class="product-option">
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
+                                            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#view">
+                                                <i data-feather="eye"></i>
+                                            </a>
+                                        </li>
 
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
+                                            <a href="compare.html">
+                                                <i data-feather="refresh-cw"></i>
+                                            </a>
+                                        </li>
+
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
+                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                <i data-feather="heart"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product-detail position-relative">
+                                    <a href="product-left-thumbnail.html">
+                                        <h6 class="name">
+                                            Muffets & Tuffets Whole Wheat Bread 400 g
+                                        </h6>
+                                    </a>
+
+                                    <h6 class="sold weight text-content fw-normal">1 KG</h6>
+
+                                    <h6 class="price theme-color">$ 80.00</h6>
+
+                                    <div class="add-to-cart-btn-2 addtocart_btn">
+                                        <button class="btn addcart-button btn buy-button"><i
+                                                class="fa-solid fa-plus"></i></button>
+                                        <div class="cart_qty qty-box-2 qty-box-3">
+                                            <div class="input-group">
+                                                <button type="button" class="qty-left-minus" data-type="minus"
+                                                    data-field="">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <button type="button" class="qty-right-plus" data-type="plus"
+                                                    data-field="">
+                                                    <i class="fa fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product-box product-white-bg wow fadeIn">
+                                <div class="product-image">
+                                    <a href="product-left-thumbnail.html">
+                                        <img src="../assets/images/cake/product/1.png"
+                                            class="img-fluid blur-up lazyload" alt="">
+                                    </a>
+                                    <ul class="product-option">
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
+                                            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#view">
+                                                <i data-feather="eye"></i>
+                                            </a>
+                                        </li>
+
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
+                                            <a href="compare.html">
+                                                <i data-feather="refresh-cw"></i>
+                                            </a>
+                                        </li>
+
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
+                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                <i data-feather="heart"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product-detail position-relative">
+                                    <a href="product-left-thumbnail.html">
+                                        <h6 class="name">
+                                            Muffets & Tuffets Whole Wheat Bread 400 g
+                                        </h6>
+                                    </a>
+
+                                    <h6 class="sold weight text-content fw-normal">1 KG</h6>
+
+                                    <h6 class="price theme-color">$ 80.00</h6>
+
+                                    <div class="add-to-cart-btn-2 addtocart_btn">
+                                        <button class="btn addcart-button btn buy-button"><i
+                                                class="fa-solid fa-plus"></i></button>
+                                        <div class="cart_qty qty-box-2 qty-box-3">
+                                            <div class="input-group">
+                                                <button type="button" class="qty-left-minus" data-type="minus"
+                                                    data-field="">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <button type="button" class="qty-right-plus" data-type="plus"
+                                                    data-field="">
+                                                    <i class="fa fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product-box product-white-bg wow fadeIn">
+                                <div class="product-image">
+                                    <a href="product-left-thumbnail.html">
+                                        <img src="../assets/images/cake/product/1.png"
+                                            class="img-fluid blur-up lazyload" alt="">
+                                    </a>
+                                    <ul class="product-option">
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
+                                            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#view">
+                                                <i data-feather="eye"></i>
+                                            </a>
+                                        </li>
+
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
+                                            <a href="compare.html">
+                                                <i data-feather="refresh-cw"></i>
+                                            </a>
+                                        </li>
+
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
+                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                <i data-feather="heart"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product-detail position-relative">
+                                    <a href="product-left-thumbnail.html">
+                                        <h6 class="name">
+                                            Muffets & Tuffets Whole Wheat Bread 400 g
+                                        </h6>
+                                    </a>
+
+                                    <h6 class="sold weight text-content fw-normal">1 KG</h6>
+
+                                    <h6 class="price theme-color">$ 80.00</h6>
+
+                                    <div class="add-to-cart-btn-2 addtocart_btn">
+                                        <button class="btn addcart-button btn buy-button"><i
+                                                class="fa-solid fa-plus"></i></button>
+                                        <div class="cart_qty qty-box-2 qty-box-3">
+                                            <div class="input-group">
+                                                <button type="button" class="qty-left-minus" data-type="minus"
+                                                    data-field="">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <button type="button" class="qty-right-plus" data-type="plus"
+                                                    data-field="">
+                                                    <i class="fa fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product-box product-white-bg wow fadeIn">
+                                <div class="product-image">
+                                    <a href="product-left-thumbnail.html">
+                                        <img src="../assets/images/cake/product/1.png"
+                                            class="img-fluid blur-up lazyload" alt="">
+                                    </a>
+                                    <ul class="product-option">
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
+                                            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#view">
+                                                <i data-feather="eye"></i>
+                                            </a>
+                                        </li>
+
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
+                                            <a href="compare.html">
+                                                <i data-feather="refresh-cw"></i>
+                                            </a>
+                                        </li>
+
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
+                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                <i data-feather="heart"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product-detail position-relative">
+                                    <a href="product-left-thumbnail.html">
+                                        <h6 class="name">
+                                            Muffets & Tuffets Whole Wheat Bread 400 g
+                                        </h6>
+                                    </a>
+
+                                    <h6 class="sold weight text-content fw-normal">1 KG</h6>
+
+                                    <h6 class="price theme-color">$ 80.00</h6>
+
+                                    <div class="add-to-cart-btn-2 addtocart_btn">
+                                        <button class="btn addcart-button btn buy-button"><i
+                                                class="fa-solid fa-plus"></i></button>
+                                        <div class="cart_qty qty-box-2 qty-box-3">
+                                            <div class="input-group">
+                                                <button type="button" class="qty-left-minus" data-type="minus"
+                                                    data-field="">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <button type="button" class="qty-right-plus" data-type="plus"
+                                                    data-field="">
+                                                    <i class="fa fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product-box product-white-bg wow fadeIn">
+                                <div class="product-image">
+                                    <a href="product-left-thumbnail.html">
+                                        <img src="../assets/images/cake/product/1.png"
+                                            class="img-fluid blur-up lazyload" alt="">
+                                    </a>
+                                    <ul class="product-option">
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
+                                            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#view">
+                                                <i data-feather="eye"></i>
+                                            </a>
+                                        </li>
+
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
+                                            <a href="compare.html">
+                                                <i data-feather="refresh-cw"></i>
+                                            </a>
+                                        </li>
+
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
+                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                <i data-feather="heart"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product-detail position-relative">
+                                    <a href="product-left-thumbnail.html">
+                                        <h6 class="name">
+                                            Muffets & Tuffets Whole Wheat Bread 400 g
+                                        </h6>
+                                    </a>
+
+                                    <h6 class="sold weight text-content fw-normal">1 KG</h6>
+
+                                    <h6 class="price theme-color">$ 80.00</h6>
+
+                                    <div class="add-to-cart-btn-2 addtocart_btn">
+                                        <button class="btn addcart-button btn buy-button"><i
+                                                class="fa-solid fa-plus"></i></button>
+                                        <div class="cart_qty qty-box-2 qty-box-3">
+                                            <div class="input-group">
+                                                <button type="button" class="qty-left-minus" data-type="minus"
+                                                    data-field="">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <button type="button" class="qty-right-plus" data-type="plus"
+                                                    data-field="">
+                                                    <i class="fa fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product-box product-white-bg wow fadeIn">
+                                <div class="product-image">
+                                    <a href="product-left-thumbnail.html">
+                                        <img src="../assets/images/cake/product/1.png"
+                                            class="img-fluid blur-up lazyload" alt="">
+                                    </a>
+                                    <ul class="product-option">
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
+                                            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#view">
+                                                <i data-feather="eye"></i>
+                                            </a>
+                                        </li>
+
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
+                                            <a href="compare.html">
+                                                <i data-feather="refresh-cw"></i>
+                                            </a>
+                                        </li>
+
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
+                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                <i data-feather="heart"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product-detail position-relative">
+                                    <a href="product-left-thumbnail.html">
+                                        <h6 class="name">
+                                            Muffets & Tuffets Whole Wheat Bread 400 g
+                                        </h6>
+                                    </a>
+
+                                    <h6 class="sold weight text-content fw-normal">1 KG</h6>
+
+                                    <h6 class="price theme-color">$ 80.00</h6>
+
+                                    <div class="add-to-cart-btn-2 addtocart_btn">
+                                        <button class="btn addcart-button btn buy-button"><i
+                                                class="fa-solid fa-plus"></i></button>
+                                        <div class="cart_qty qty-box-2 qty-box-3">
+                                            <div class="input-group">
+                                                <button type="button" class="qty-left-minus" data-type="minus"
+                                                    data-field="">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <button type="button" class="qty-right-plus" data-type="plus"
+                                                    data-field="">
+                                                    <i class="fa fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product-box product-white-bg wow fadeIn">
+                                <div class="product-image">
+                                    <a href="product-left-thumbnail.html">
+                                        <img src="../assets/images/cake/product/1.png"
+                                            class="img-fluid blur-up lazyload" alt="">
+                                    </a>
+                                    <ul class="product-option">
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
+                                            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#view">
+                                                <i data-feather="eye"></i>
+                                            </a>
+                                        </li>
+
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
+                                            <a href="compare.html">
+                                                <i data-feather="refresh-cw"></i>
+                                            </a>
+                                        </li>
+
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
+                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                <i data-feather="heart"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product-detail position-relative">
+                                    <a href="product-left-thumbnail.html">
+                                        <h6 class="name">
+                                            Muffets & Tuffets Whole Wheat Bread 400 g
+                                        </h6>
+                                    </a>
+
+                                    <h6 class="sold weight text-content fw-normal">1 KG</h6>
+
+                                    <h6 class="price theme-color">$ 80.00</h6>
+
+                                    <div class="add-to-cart-btn-2 addtocart_btn">
+                                        <button class="btn addcart-button btn buy-button"><i
+                                                class="fa-solid fa-plus"></i></button>
+                                        <div class="cart_qty qty-box-2 qty-box-3">
+                                            <div class="input-group">
+                                                <button type="button" class="qty-left-minus" data-type="minus"
+                                                    data-field="">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <button type="button" class="qty-right-plus" data-type="plus"
+                                                    data-field="">
+                                                    <i class="fa fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product-box product-white-bg wow fadeIn">
+                                <div class="product-image">
+                                    <a href="product-left-thumbnail.html">
+                                        <img src="../assets/images/cake/product/1.png"
+                                            class="img-fluid blur-up lazyload" alt="">
+                                    </a>
+                                    <ul class="product-option">
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
+                                            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#view">
+                                                <i data-feather="eye"></i>
+                                            </a>
+                                        </li>
+
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
+                                            <a href="compare.html">
+                                                <i data-feather="refresh-cw"></i>
+                                            </a>
+                                        </li>
+
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
+                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                <i data-feather="heart"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product-detail position-relative">
+                                    <a href="product-left-thumbnail.html">
+                                        <h6 class="name">
+                                            Muffets & Tuffets Whole Wheat Bread 400 g
+                                        </h6>
+                                    </a>
+
+                                    <h6 class="sold weight text-content fw-normal">1 KG</h6>
+
+                                    <h6 class="price theme-color">$ 80.00</h6>
+
+                                    <div class="add-to-cart-btn-2 addtocart_btn">
+                                        <button class="btn addcart-button btn buy-button"><i
+                                                class="fa-solid fa-plus"></i></button>
+                                        <div class="cart_qty qty-box-2 qty-box-3">
+                                            <div class="input-group">
+                                                <button type="button" class="qty-left-minus" data-type="minus"
+                                                    data-field="">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <button type="button" class="qty-right-plus" data-type="plus"
+                                                    data-field="">
+                                                    <i class="fa fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div>
                             <div class="product-box product-white-bg wow fadeIn" data-wow-delay="0.1s">
                                 <div class="product-image">
@@ -806,7 +1420,7 @@
     <!-- Product Section End -->
 
     <!-- Footer Section Start -->
-    <footer class="section-t-space">
+    <footer class="footer-sm">
         <div class="container-fluid-lg">
             <div class="service-section">
                 <div class="row g-3">
@@ -1464,6 +2078,51 @@
 
     <!-- theme setting js -->
     <script src="../assets/js/theme-setting.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.food-grid').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                arrows: false,
+                infinite: false,
+                responsive: [{
+                        breakpoint: 1400,
+                        settings: {
+                            slidesToShow: 5
+                        }
+                    },
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 4
+                        }
+                    },
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 576,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    }
+                ]
+            });
+
+            $('.food-next').on('click', function() {
+                $('.food-grid').slick('slickNext');
+            });
+
+            $('.food-prev').on('click', function() {
+                $('.food-grid').slick('slickPrev');
+            });
+
+        });
+    </script>
 </body>
 
 
