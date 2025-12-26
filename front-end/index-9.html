@@ -38,6 +38,7 @@
     <link id="color-link" rel="stylesheet" type="text/css" href="../assets/css/style.css">
 
 
+
 </head>
 
 <body class="theme-color-4 bg-gradient-color">
@@ -58,112 +59,277 @@
     <header class="pb-0 fixed-header">
 
         <!-- TOP BLUE BAR -->
-        <div class="top-bar py-2" style="background:#0d2344;">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-
-                    <!-- LEFT -->
-                    <div class="col-lg-6 d-flex align-items-center gap-4">
-                        <div class="d-flex align-items-center text-white gap-2">
-                            <i class="fa fa-phone"></i>
-                            <span>Have a question? Call us now at +91 98416 80906</span>
-                        </div>
-
-                        <!-- <div class="d-flex align-items-center text-white gap-2">
-                            <i class="fa fa-envelope"></i>
-                            <span>care@industrybuying.com</span>
-                        </div> -->
-                    </div>
-
-                    <!-- RIGHT -->
-                    <div class="col-lg-6">
-                        <ul class="d-flex justify-content-end align-items-end gap-4 list-unstyled m-0">
-
-                            <!-- Write To Management -->
-                            <li>
-                                <a href="#" class="btn btn-sm"
-                                    style="background:#e65100; color:white; font-weight:600; padding:4px 12px;">
-                                    <i class="fa fa-envelope me-1"></i>
-                                    Quotation Request
-                                </a>
-                            </li>
-
-
-                            <li>
-                                <a href="#" class="text-white text-decoration-none">
-                                    <i class="fa fa-envelope me-1"></i></i>
-                                    Blog
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-white text-decoration-none">
-                                    <i class="fa fa-envelope me-1"></i></i>
-                                    saiassociate2009@gmail.com
-                                </a>
-                            </li>
-
-                            <!-- <li><a href="#" class="text-white text-decoration-none">Track Order</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Write Review</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Chat</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Blog</a></li> -->
-
-                            <!-- <li><img src="android-icon.png" alt="android" style="height:20px;"></li>
-                            <li><img src="ios-icon.png" alt="ios" style="height:20px;"></li> -->
-
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </div>
 
         <!-- MAIN WHITE HEADER -->
-        <div class="top-nav top-header bg-white">
-            <div class="container-fluid">
-                <div class="row align-items-center p-0 m-0">
+        <!-- HEADER -->
+        <!-- ===========================
+      HEADER START
+=========================== -->
+        <style>
+            :root {
+                --header-height: 48px;
+                --radius: 10px;
+            }
+
+            /* ====== HEADER ====== */
+            .top-header {
+                position: sticky;
+                top: 0;
+                z-index: 999;
+                background-color: #AE275F;
+                transition: box-shadow 0.3s ease;
+            }
+
+            .top-header.scrolled {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            }
+
+            /* ====== LOGO ====== */
+            .top-header img {
+                height: 60px;
+                width: auto;
+                border-radius: 8px;
+            }
+
+            /* ====== SEARCH BAR ====== */
+            .header-search {
+                height: var(--header-height);
+                background: #fff;
+                border-radius: var(--radius);
+                padding: 4px;
+                width: 100%;
+                max-width: 720px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .search-input {
+                height: 100%;
+                border: none;
+                background: transparent;
+                padding: 0 12px;
+                font-size: 14px;
+                flex: 1;
+            }
+
+            .search-input:focus {
+                outline: none;
+                box-shadow: none;
+            }
+
+            .search-btn {
+                height: 100%;
+                background: #7cb342;
+                color: #fff;
+                border-radius: 8px;
+                padding: 0 18px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .search-btn:hover {
+                background: #689f38;
+            }
+
+            /* ====== ACTION BOX ====== */
+            .action-box {
+                height: var(--header-height);
+                min-width: var(--header-height);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                padding: 0 14px;
+                background: #fff;
+                border: 1px solid #e0e0e0;
+                border-radius: var(--radius);
+                font-size: 14px;
+                color: #000;
+                text-decoration: none;
+                position: relative;
+                cursor: pointer;
+            }
+
+            .action-box i {
+                font-size: 16px;
+            }
+
+            .action-box span {
+                display: inline-block;
+            }
+
+            .action-box:hover {
+                background: #f8f9fa;
+            }
+
+            /* ====== DROPDOWN ====== */
+            .dropdown {
+                position: relative;
+            }
+
+            .dropdown-menu {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: #fff;
+                border: 1px solid #ddd;
+                border-radius: var(--radius);
+                min-width: 150px;
+                display: none;
+                flex-direction: column;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+
+            .dropdown-menu a {
+                padding: 8px 12px;
+                font-size: 14px;
+                color: #333;
+                text-decoration: none;
+            }
+
+            .dropdown-menu a:hover {
+                background: #f1f1f1;
+            }
+
+            .dropdown:hover .dropdown-menu {
+                display: flex;
+            }
+
+            /* ====== BADGE ====== */
+            .badge-count {
+                position: absolute;
+                top: -6px;
+                right: -6px;
+                background: #7cb342;
+                color: #fff;
+                font-size: 11px;
+                padding: 2px 6px;
+                border-radius: 50%;
+            }
+
+            /* ====== MOBILE SEARCH ====== */
+            .mobile-search {
+                display: none;
+                padding: 12px;
+                background: #fff;
+                border-top: 1px solid #eee;
+                animation: slideDown 0.3s ease;
+            }
+
+            .mobile-search .search-input {
+                height: var(--header-height);
+                background: #f7f7f7;
+                border-radius: var(--radius);
+            }
+
+            .mobile-search .search-btn {
+                height: var(--header-height);
+            }
+
+            /* Slide animation */
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* ====== MOBILE ====== */
+            @media (max-width: 991px) {
+
+                .header-search {
+                    display: none !important;
+                }
+
+                .action-box span {
+                    display: none;
+                }
+
+                .action-box {
+                    padding: 0 12px;
+                }
+
+                .badge-count {
+                    font-size: 10px;
+                    top: -5px;
+                    right: -5px;
+                }
+
+                .dropdown:hover .dropdown-menu {
+                    display: none;
+                }
+
+                .dropdown-menu.show {
+                    display: flex !important;
+                }
+
+                .mobile-search {
+                    display: none;
+                }
+            }
+        </style>
+
+        <div class="top-header">
+            <div class="container-fluid px-4">
+                <div class="row align-items-center py-3">
 
                     <!-- LOGO -->
                     <div class="col-lg-3 col-6 d-flex align-items-center">
-                        <a href="/" class="d-flex align-items-center">
-                            <img src="../assets/images/favicon/44.png" alt="Logo"
-                                style="height:70px; width:auto; max-width:100%;">
+                        <a href="/" class="d-flex align-items-center text-decoration-none">
+                            <img src="../assets/images/favicon/44.png" alt="Logo">
                         </a>
                     </div>
 
-                    <!-- SEARCH BAR -->
-                    <div class="col-lg-5 d-none d-lg-block">
-                        <div class="input-group input-group-md">
-                            <input type="text" class="form-control border rounded-pill ps-3"
-                                placeholder="Search Products...">
-                            <button class="btn rounded-pill px-3" style="background:#ff6b00; color:white;">
-                                <i class="fa fa-search"></i>
+                    <!-- SEARCH BAR (DESKTOP) -->
+                    <div class="col-lg-5 d-none d-lg-flex justify-content-center">
+                        <div class="header-search">
+                            <input type="text" class="form-control search-input"
+                                placeholder="Search for products, categories">
+                            <button class="btn search-btn">
+                                Search <i class="fa fa-search ms-1"></i>
                             </button>
                         </div>
                     </div>
 
-                    <!-- RIGHT ICONS AREA -->
+                    <!-- RIGHT ACTIONS -->
                     <div class="col-lg-4 col-6">
-                        <div class="d-flex justify-content-center align-items-center gap-3">
+                        <div class="d-flex justify-content-end align-items-center gap-3">
 
-                            <!-- Help Center -->
-                            <a href="#" class="btn btn-light rounded-pill px-3 py-1 d-flex align-items-center">
-                                <i class="fa fa-truck me-2 text-primary"></i> Track Order
+                            <!-- Mobile Search Icon -->
+                            <a href="javascript:void(0)" class="action-box d-lg-none" onclick="toggleMobileSearch()">
+                                <i class="fa fa-search"></i>
                             </a>
 
-                            <!-- Login -->
-                            <a href="#"
-                                class="btn btn-outline-primary rounded-pill px-3 py-1 d-flex align-items-center">
-                                <i class="fa fa-user me-2"></i> Login
+                            <!-- ACCOUNT DROPDOWN -->
+                            <div class="action-box dropdown" onclick="toggleDropdown(this)">
+                                <i class="fa fa-user"></i>
+                                <span>Account</span>
+                                <div class="dropdown-menu">
+                                    <a href="#">Login</a>
+                                    <a href="#">Register</a>
+                                    <a href="#">Orders</a>
+                                    <a href="#">Wishlist</a>
+                                </div>
+                            </div>
+                            <!-- CART -->
+                            <a href="#" class="action-box position-relative">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span>My Cart</span>
+                                <span class="badge-count">2</span>
                             </a>
-
-                            <!-- Cart -->
-                            <a href="#"
-                                class="btn btn-light rounded-pill px-3 py-1 d-flex align-items-center position-relative">
-                                <i class="fa fa-shopping-cart me-2"></i> Cart
-                                <!-- <span class="position-absolute top-0 start-100 translate-middle 
-                         bg-danger text-white rounded-circle px-2 py-0" style="font-size:12px;">
-                                    0
-                                </span> -->
+                              <!-- WISHLIST -->
+                            <a href="#" class="action-box position-relative">
+                                <i class="fa  fa-clipboard-list"></i>
+                                <span> Quotation Request</span>
                             </a>
 
                         </div>
@@ -171,7 +337,43 @@
 
                 </div>
             </div>
+
+            <!-- MOBILE SEARCH -->
+            <div id="mobileSearch" class="mobile-search">
+                <input type="text" class="form-control search-input" placeholder="Search for products, categories">
+                <button class="btn search-btn w-100 mt-2">
+                    Search <i class="fa fa-search ms-1"></i>
+                </button>
+            </div>
         </div>
+
+        <script>
+            function toggleMobileSearch() {
+                const mobileSearch = document.getElementById('mobileSearch');
+                mobileSearch.style.display = mobileSearch.style.display === 'block' ? 'none' : 'block';
+            }
+
+            function toggleDropdown(el) {
+                const menu = el.querySelector('.dropdown-menu');
+                menu.classList.toggle('show');
+                // Close other dropdowns if needed
+                document.querySelectorAll('.dropdown-menu').forEach(dm => {
+                    if (dm !== menu) dm.classList.remove('show');
+                });
+            }
+
+            // Optional: close dropdown when clicking outside
+            document.addEventListener('click', function (e) {
+                document.querySelectorAll('.dropdown-menu').forEach(dm => {
+                    if (!dm.parentElement.contains(e.target)) {
+                        dm.classList.remove('show');
+                    }
+                });
+            });
+        </script>
+
+
+
 
 
     </header>
@@ -500,7 +702,7 @@
                 </script>
 
 
-                <div class="content-col">
+                <div class="content-col" >
                     <div class="section-b-space">
                         <div class="row g-md-4 ">
                             <style>
@@ -551,25 +753,29 @@
 
                                     <div>
                                         <div class="product-slider-image">
-                                            <img src="https://static3.industrybuying.com/homepage/1764757954Desktop-Banner-1200x350-Office-Supplies.png" class="img-fluid">
+                                            <img src="https://static3.industrybuying.com/homepage/1764757954Desktop-Banner-1200x350-Office-Supplies.png"
+                                                class="img-fluid">
                                         </div>
                                     </div>
 
                                     <div>
                                         <div class="product-slider-image">
-                                            <img src="https://static3.industrybuying.com/homepage/1764906420image%20-%202025-12-04T174204.776.png" class="img-fluid">
+                                            <img src="https://static3.industrybuying.com/homepage/1764906420image%20-%202025-12-04T174204.776.png"
+                                                class="img-fluid">
                                         </div>
                                     </div>
 
                                     <div>
                                         <div class="product-slider-image">
-                                            <img src="https://static3.industrybuying.com/homepage/1764757954Desktop-Banner-1200x350-Office-Supplies.png" class="img-fluid">
+                                            <img src="https://static3.industrybuying.com/homepage/1764757954Desktop-Banner-1200x350-Office-Supplies.png"
+                                                class="img-fluid">
                                         </div>
                                     </div>
 
                                     <div>
                                         <div class="product-slider-image">
-                                            <img src="https://static3.industrybuying.com/homepage/1764906420image%20-%202025-12-04T174204.776.png" class="img-fluid">
+                                            <img src="https://static3.industrybuying.com/homepage/1764906420image%20-%202025-12-04T174204.776.png"
+                                                class="img-fluid">
                                         </div>
                                     </div>
 
@@ -1420,56 +1626,8 @@
     <!-- Product Section End -->
 
     <!-- Footer Section Start -->
-    <footer class="footer-sm">
+    <footer class="footer">
         <div class="container-fluid-lg">
-            <div class="service-section">
-                <div class="row g-3">
-                    <div class="col-12">
-                        <div class="service-contain">
-                            <div class="service-box">
-                                <div class="service-image">
-                                    <img src="../assets/svg/product.svg" class="blur-up lazyload" alt="">
-                                </div>
-
-                                <div class="service-detail">
-                                    <h5>Every Fresh Products</h5>
-                                </div>
-                            </div>
-
-                            <div class="service-box">
-                                <div class="service-image">
-                                    <img src="../assets/svg/delivery.svg" class="blur-up lazyload" alt="">
-                                </div>
-
-                                <div class="service-detail">
-                                    <h5>Free Delivery For Order Over $50</h5>
-                                </div>
-                            </div>
-
-                            <div class="service-box">
-                                <div class="service-image">
-                                    <img src="../assets/svg/discount.svg" class="blur-up lazyload" alt="">
-                                </div>
-
-                                <div class="service-detail">
-                                    <h5>Daily Mega Discounts</h5>
-                                </div>
-                            </div>
-
-                            <div class="service-box">
-                                <div class="service-image">
-                                    <img src="../assets/svg/market.svg" class="blur-up lazyload" alt="">
-                                </div>
-
-                                <div class="service-detail">
-                                    <h5>Best Price On The Market</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="main-footer section-b-space section-t-space">
                 <div class="row g-md-4 g-3">
                     <div class="col-xl-3 col-lg-4 col-sm-6">
@@ -1879,7 +2037,7 @@
     <!-- Location Modal End -->
 
     <!-- Cookie Bar Box Start -->
-    <div class="cookie-bar-box">
+    <!-- <div class="cookie-bar-box">
         <div class="cookie-box">
             <div class="cookie-image">
                 <img src="../assets/images/cookie-bar.png" class="blur-up lazyload" alt="">
@@ -1895,7 +2053,7 @@
             <button class="btn privacy-button">Privacy Policy</button>
             <button class="btn ok-button">OK</button>
         </div>
-    </div>
+    </div> -->
     <!-- Cookie Bar Box End -->
 
     <!-- Deal Box Modal Start -->
@@ -2079,7 +2237,7 @@
     <!-- theme setting js -->
     <script src="../assets/js/theme-setting.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             $('.food-grid').slick({
                 slidesToShow: 4,
@@ -2087,42 +2245,44 @@
                 arrows: false,
                 infinite: false,
                 responsive: [{
-                        breakpoint: 1400,
-                        settings: {
-                            slidesToShow: 5
-                        }
-                    },
-                    {
-                        breakpoint: 1200,
-                        settings: {
-                            slidesToShow: 4
-                        }
-                    },
-                    {
-                        breakpoint: 992,
-                        settings: {
-                            slidesToShow: 3
-                        }
-                    },
-                    {
-                        breakpoint: 576,
-                        settings: {
-                            slidesToShow: 2
-                        }
+                    breakpoint: 1400,
+                    settings: {
+                        slidesToShow: 5
                     }
+                },
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 4
+                    }
+                },
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                }
                 ]
             });
 
-            $('.food-next').on('click', function() {
+            $('.food-next').on('click', function () {
                 $('.food-grid').slick('slickNext');
             });
 
-            $('.food-prev').on('click', function() {
+            $('.food-prev').on('click', function () {
                 $('.food-grid').slick('slickPrev');
             });
 
         });
     </script>
+
+
 </body>
 
 
