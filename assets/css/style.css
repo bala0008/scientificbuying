@@ -22159,15 +22159,15 @@ header .nav-about {
 header .nav-about-2 {
     background-color: #222
 }
-
+/* 
 header .top-nav {
     padding: 24px 0
-}
+} */
 
 @media(max-width: 767px) {
-    header .top-nav {
+    /* header .top-nav {
         padding: 24px 0 0
-    }
+    } */
 }
 
 header .top-nav .navbar-top {
@@ -30978,7 +30978,7 @@ body.rtl .menu-label {
 
 .category-menu.menu-xl {
     position: sticky;
-    top: 130px
+    top: 106px
 }
 
 .category-menu.menu-xl ul {
@@ -37597,7 +37597,8 @@ body.rtl .menu-label {
 
 .log-in-section .log-in-box {
     background-color: #f8f8f8;
-    padding: calc(16px + 34*(100vw - 320px)/1600);
+    /* padding: calc(16px + 34*(100vw - 320px)/1600); */
+    padding: calc(0px + 34*(100vw - 320px)/1600);
     border-radius: calc(8px + 4*(100vw - 320px)/1600)
 }
 
